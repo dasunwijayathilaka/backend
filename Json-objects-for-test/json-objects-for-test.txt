@@ -1,0 +1,310 @@
+
+create ad
+{
+  "title": "iPhone 15 Pro Max - 1TB",
+  "description": "Brand new iPhone 15 Pro Max (1TB) - Factory Unlocked. Comes with full box, charger, and official warranty.",
+  "price": 530000.00,
+  "status": "Available",
+  "userId": 2,
+  "categoryId": 1,
+  "locationId": 3,
+  "imageUrls": [
+    "https://example.com/iphone15pro-front.jpg",
+    "https://example.com/iphone15pro-back.jpg"
+  ]
+}
+
+
+
+{
+  "title": "iPhone 15 Pro Max - 1TB",
+  "description": "Brand new iPhone 15 Pro Max (1TB) - Factory Unlocked. Comes with full box, charger, and official warranty.",
+  "price": 530000.00,
+}
+
+
+
+REGISTER USER
+{
+  "name": "Jagath",
+  "email": "jagath@example.com",
+  "password": "password",
+  "phone": "0787656665"
+}
+
+LOGIN USER
+{
+  "email": "jagath@example.com",
+  "password": "password",
+}
+
+
+----- CATEGORY TABLE
+
+ALTER TABLE category MODIFY COLUMN parent_category_id VARCHAR(36) NULL;
+
+INSERT INTO category (id, name, image_url, parent_category_id)
+VALUES ('550e8400-e29b-41d4-a716-446655440000', 'Main Category', ' ', NULL);
+
+
+
+
+
+
+
+
+
+-- Insert Sri Lanka as the root location
+INSERT INTO LOCATION (id, name, parent_location_id)
+VALUES ('21bf6dc0-07b1-11f0-b8c1-83ce8323275c', 'Sri Lanka', NULL);
+
+
+
+-- Insert the 25 districts of Sri Lanka with custom UUIDs and use '21bf6dc0-07b1-11f0-b8c1-83ce8323275c' as parent_location_id
+INSERT INTO LOCATION (id, name, parent_location_id) VALUES
+('78cfb25a-07b1-11f0-b8c1-83ce8323275c', 'Colombo', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cfd316-07b1-11f0-b8c1-83ce8323275c', 'Gampaha', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cfd6a4-07b1-11f0-b8c1-83ce8323275c', 'Kalutara', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cfd82a-07b1-11f0-b8c1-83ce8323275c', 'Kandy', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cfd992-07b1-11f0-b8c1-83ce8323275c', 'Matale', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cfdadc-07b1-11f0-b8c1-83ce8323275c', 'Nuwara Eliya', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cfdc12-07b1-11f0-b8c1-83ce8323275c', 'Galle', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cfde42-07b1-11f0-b8c1-83ce8323275c', 'Matara', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cfe018-07b1-11f0-b8c1-83ce8323275c', 'Hambantota', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cfe162-07b1-11f0-b8c1-83ce8323275c', 'Jaffna', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cfe298-07b1-11f0-b8c1-83ce8323275c', 'Kilinochchi', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cfe3ce-07b1-11f0-b8c1-83ce8323275c', 'Mannar', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cfe504-07b1-11f0-b8c1-83ce8323275c', 'Vavuniya', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cfe644-07b1-11f0-b8c1-83ce8323275c', 'Mullaitivu', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cfe77a-07b1-11f0-b8c1-83ce8323275c', 'Batticaloa', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cfe8b0-07b1-11f0-b8c1-83ce8323275c', 'Ampara', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cfea2c-07b1-11f0-b8c1-83ce8323275c', 'Trincomalee', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cfeb6c-07b1-11f0-b8c1-83ce8323275c', 'Kurunegala', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cfec98-07b1-11f0-b8c1-83ce8323275c', 'Puttalam', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cfedc4-07b1-11f0-b8c1-83ce8323275c', 'Anuradhapura', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cfeefa-07b1-11f0-b8c1-83ce8323275c', 'Polonnaruwa', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cff026-07b1-11f0-b8c1-83ce8323275c', 'Badulla', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cff15c-07b1-11f0-b8c1-83ce8323275c', 'Monaragala', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cff288-07b1-11f0-b8c1-83ce8323275c', 'Ratnapura', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c'),
+('78cff4ea-07b1-11f0-b8c1-83ce8323275c', 'Kegalle', '21bf6dc0-07b1-11f0-b8c1-83ce8323275c');
+
+
+
+
+-- Colombo District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Colombo City', '78cfb25a-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Dehiwala', '78cfb25a-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Moratuwa', '78cfb25a-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Sri Jayawardenepura Kotte', '78cfb25a-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kaduwela', '78cfb25a-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Homagama', '78cfb25a-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kesbewa', '78cfb25a-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kolonnawa', '78cfb25a-07b1-11f0-b8c1-83ce8323275c');
+
+-- Gampaha District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Gampaha Town', '78cfd316-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Nittambuwa', '78cfd316-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Wattala', '78cfd316-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Veyangoda', '78cfd316-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Minuwangoda', '78cfd316-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Ja-Ela', '78cfd316-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Ragama', '78cfd316-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Mahara', '78cfd316-07b1-11f0-b8c1-83ce8323275c');
+
+-- Kalutara District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kalutara Town', '78cfd6a4-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Beruwala', '78cfd6a4-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Bentota', '78cfd6a4-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Horana', '78cfd6a4-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Panadura', '78cfd6a4-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Wadduwa', '78cfd6a4-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Moronthuduwa', '78cfd6a4-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Maggona', '78cfd6a4-07b1-11f0-b8c1-83ce8323275c');
+
+-- Kandy District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kandy City', '78cfd82a-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Peradeniya', '78cfd82a-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Katugastota', '78cfd82a-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Teldeniya', '78cfd82a-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Digana', '78cfd82a-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kundasale', '78cfd82a-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Gampola', '78cfd82a-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Wattegama', '78cfd82a-07b1-11f0-b8c1-83ce8323275c');
+
+-- Matale District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Matale Town', '78cfd992-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Dambulla', '78cfd992-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Habarana', '78cfd992-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Naula', '78cfd992-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Ukuwela', '78cfd992-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Rattota', '78cfd992-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Laggala', '78cfd992-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Elahera', '78cfd992-07b1-11f0-b8c1-83ce8323275c');
+
+-- Nuwara Eliya District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Nuwara Eliya Town', '78cfdadc-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kandy Road', '78cfdadc-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Walapane', '78cfdadc-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Ragala', '78cfdadc-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kotmale', '78cfdadc-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Haddon Hill', '78cfdadc-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Ambewela', '78cfdadc-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Pussellawa', '78cfdadc-07b1-11f0-b8c1-83ce8323275c');
+
+-- Galle District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Galle City', '78cfdc12-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Unawatuna', '78cfdc12-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Habaraduwa', '78cfdc12-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Akmeemana', '78cfdc12-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Bope', '78cfdc12-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Elpitiya', '78cfdc12-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Karapitiya', '78cfdc12-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Baddegama', '78cfdc12-07b1-11f0-b8c1-83ce8323275c');
+
+-- Matara District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Matara City', '78cfde42-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kamburugamuwa', '78cfde42-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Dickwella', '78cfde42-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Tangalle', '78cfde42-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Weligama', '78cfde42-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Mirissa', '78cfde42-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Akuressa', '78cfde42-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Deniyaya', '78cfde42-07b1-11f0-b8c1-83ce8323275c');
+
+-- Hambantota District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Hambantota Town', '78cfe018-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Tissamaharama', '78cfe018-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Tangalle', '78cfe018-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Weeraketiya', '78cfe018-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kirinda', '78cfe018-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Ambalantota', '78cfe018-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Katuwana', '78cfe018-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Beliatta', '78cfe018-07b1-11f0-b8c1-83ce8323275c');
+
+-- Jaffna District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Jaffna City', '78cfe162-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Point Pedro', '78cfe162-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Chavakachcheri', '78cfe162-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Thellipalai', '78cfe162-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Nallur', '78cfe162-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Tellippalai', '78cfe162-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Karainagar', '78cfe162-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Vannarponnai', '78cfe162-07b1-11f0-b8c1-83ce8323275c');
+
+-- Kilinochchi District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kilinochchi Town', '78cfe298-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Karachchi', '78cfe298-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Pachchilapalli', '78cfe298-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kanagarayankulam', '78cfe298-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Vishvamadu', '78cfe298-07b1-11f0-b8c1-83ce8323275c');
+
+-- Mannar District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Mannar Town', '78cfe3ce-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Talaimannar', '78cfe3ce-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Nanattan', '78cfe3ce-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Musali', '78cfe3ce-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Madhu', '78cfe3ce-07b1-11f0-b8c1-83ce8323275c');
+
+-- Vavuniya District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Vavuniya Town', '78cfe504-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Cheddikulam', '78cfe504-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kurumankadu', '78cfe504-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Vavuniya North', '78cfe504-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Vavuniya South', '78cfe504-07b1-11f0-b8c1-83ce8323275c');
+
+-- Mullaitivu District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Mullaitivu Town', '78cfe644-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kilinochchi', '78cfe644-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Oddusuddan', '78cfe644-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Thunukkai', '78cfe644-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Pudukuduiruppu', '78cfe644-07b1-11f0-b8c1-83ce8323275c');
+
+-- Batticaloa District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Batticaloa Town', '78cfe77a-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kaluwanchikudy', '78cfe77a-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Eravur', '78cfe77a-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kattankudy', '78cfe77a-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Chenkalady', '78cfe77a-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Valaichchenai', '78cfe77a-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Manmunai', '78cfe77a-07b1-11f0-b8c1-83ce8323275c');
+
+-- Ampara District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Ampara Town', '78cfe8b0-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kalmunai', '78cfe8b0-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Pottuvil', '78cfe8b0-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Samanthurai', '78cfe8b0-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Akkaraipattu', '78cfe8b0-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Panama', '78cfe8b0-07b1-11f0-b8c1-83ce8323275c');
+
+-- Trincomalee District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Trincomalee Town', '78cfea2c-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kinniya', '78cfea2c-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kantale', '78cfea2c-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kuchchaveli', '78cfea2c-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Muttur', '78cfea2c-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Serunuwara', '78cfea2c-07b1-11f0-b8c1-83ce8323275c');
+
+-- Kurunegala District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kurunegala Town', '78cfeb6c-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Narammala', '78cfeb6c-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Melsiripura', '78cfeb6c-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Pannala', '78cfeb6c-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Alawwa', '78cfeb6c-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kuliyapitiya', '78cfeb6c-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Dambadeniya', '78cfeb6c-07b1-11f0-b8c1-83ce8323275c');
+
+-- Puttalam District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Puttalam Town', '78cfec98-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Chilaw', '78cfec98-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Marawila', '78cfec98-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Wennappuwa', '78cfec98-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Mundalama', '78cfec98-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kalpitiya', '78cfec98-07b1-11f0-b8c1-83ce8323275c');
+
+-- Anuradhapura District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Anuradhapura City', '78cfedc4-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Mihintale', '78cfedc4-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Thalawa', '78cfedc4-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Galnewa', '78cfedc4-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kekirawa', '78cfedc4-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Palugaswewa', '78cfedc4-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Habarana', '78cfedc4-07b1-11f0-b8c1-83ce8323275c');
+
+-- Polonnaruwa District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Polonnaruwa Town', '78cfeefa-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Batticaloa', '78cfeefa-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kahatagasdigiliya', '78cfeefa-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Galoya', '78cfeefa-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Hingurakgoda', '78cfeefa-07b1-11f0-b8c1-83ce8323275c');
+
+-- Badulla District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Badulla Town', '78cff026-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Bandarawela', '78cff026-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Haputale', '78cff026-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Passara', '78cff026-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Koslanda', '78cff026-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Meegahakiula', '78cff026-07b1-11f0-b8c1-83ce8323275c');
+
+-- Monaragala District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Monaragala Town', '78cff15c-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Bibile', '78cff15c-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kataragama', '78cff15c-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Wellawaya', '78cff15c-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Medagama', '78cff15c-07b1-11f0-b8c1-83ce8323275c');
+
+-- Ratnapura District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Ratnapura Town', '78cff288-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Balangoda', '78cff288-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Embilipitiya', '78cff288-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kuruwita', '78cff288-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Nivithigala', '78cff15c-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Elapatha', '78cff288-07b1-11f0-b8c1-83ce8323275c');
+
+-- Kegalle District towns
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Kegalle Town', '78cff4ea-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Mawanella', '78cff4ea-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Warakapola', '78cff4ea-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Galigamuwa', '78cff4ea-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Rambukkana', '78cff4ea-07b1-11f0-b8c1-83ce8323275c');
+INSERT INTO location (id, name, parent_location_id) VALUES (UUID(), 'Aranayaka', '78cff4ea-07b1-11f0-b8c1-83ce8323275c');
+
