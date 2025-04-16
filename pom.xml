@@ -9,11 +9,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>lk.ijse</groupId>
-    <artifactId>Backend</artifactId>
+    <artifactId>AAD-Backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>Backend</name>
-    <description>Backend</description>
+    <name>AAD-Backend</name>
+    <description>AAD-Backend</description>
     <url/>
     <licenses>
         <license/>
